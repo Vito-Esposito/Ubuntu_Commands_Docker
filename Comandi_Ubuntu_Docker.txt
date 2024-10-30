@@ -1,0 +1,52 @@
+Utilizzare il terminale di Ubuntu in Docker e usarlo direttamente in Ubuntu ha alcune differenze fondamentali:
+
+    Ambiente isolato (Container vs Sistema Operativo):
+        Docker: Quando esegui un terminale Ubuntu in Docker, lavori in un container, un ambiente isolato che ha il suo file system, la sua rete e i suoi processi separati dal sistema operativo principale. Ogni container Docker è un’istanza autonoma di Ubuntu (o di qualsiasi altra immagine) con configurazioni separate, senza influenzare direttamente il sistema host.
+        Ubuntu nativo: Quando usi il terminale su Ubuntu nativo, hai accesso completo al sistema operativo e a tutte le risorse del computer, inclusi file di sistema e hardware.
+
+    Persistenza dei dati:
+        Docker: I dati e le modifiche fatte all’interno di un container Docker non sono permanenti a meno che non vengano salvati su volumi esterni o file bindati. Se il container viene rimosso, tutte le sue modifiche vengono perse.
+        Ubuntu nativo: Ogni modifica fatta tramite terminale è persistente sul sistema operativo e rimane anche dopo riavvii.
+
+    Risorse e Permessi:
+        Docker: Un container può avere restrizioni di risorse (CPU, memoria) e permessi limitati rispetto al sistema host. Questi limiti sono configurabili, ma per impostazione predefinita un container non ha lo stesso accesso diretto all’hardware del sistema operativo host.
+        Ubuntu nativo: Il terminale ha accesso diretto alle risorse hardware e software del sistema, a meno che non ci siano limitazioni specifiche impostate.
+
+    Utilizzo e Scopo:
+        Docker: Ideale per eseguire applicazioni in modo portatile e isolato, per lo sviluppo e il test di applicazioni senza impattare il sistema host.
+        Ubuntu nativo: Più indicato per l’uso generale del sistema, gestire il sistema operativo e accedere direttamente a file e impostazioni hardware.
+
+ 
+I comandi e il codice che esegui in un terminale Ubuntu in Docker e in un terminale Ubuntu nativo sono praticamente gli stessi, poiché entrambi utilizzano la stessa shell e gli stessi strumenti di base di Ubuntu. Tuttavia, ci sono alcune differenze operative che potresti incontrare:
+
+    Installazione dei pacchetti:
+        In Docker, l’installazione di pacchetti o dipendenze è spesso ottimizzata e limitata ai requisiti specifici dell'applicazione. In un container, è buona pratica installare solo ciò che serve per ridurre le dimensioni dell’immagine e migliorare le prestazioni.
+        Su Ubuntu nativo, invece, puoi installare liberamente qualsiasi pacchetto o software senza questa limitazione di spazio.
+
+    Gestione dei permessi:
+        Nei container Docker, potresti avere restrizioni sui permessi a seconda delle impostazioni di Docker e dei parametri del container. Ad esempio, l'accesso diretto ai dispositivi di sistema (come USB o GPU) richiede configurazioni specifiche.
+        Su Ubuntu nativo, hai generalmente il controllo completo delle risorse di sistema con i permessi di amministratore.
+
+    Path dei file e Volumi:
+        In Docker, i percorsi dei file sono isolati nel file system del container e non sono collegati direttamente al sistema host, a meno che non si montino dei volumi per condividere directory specifiche.
+        Su Ubuntu nativo, i file si trovano nei percorsi classici del file system del sistema operativo.
+
+In sintesi, il codice e i comandi di base sono uguali, ma potresti dover prestare attenzione a questi aspetti per assicurarti che funzionino nello stesso modo su entrambi gli ambienti.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Sto imparando ad usare il terminale di Ubundu da Docker, comandi conosciuti:
+
+Aggiornare l’elenco dei pacchetti: apt-get update
+Aggiornare ubuntu: apt-get upgrade
+Installare sudo: apt-get install sudo
+Installare build-essential: apt-get install build-essential
+Installare vim: apt get install vim
+
+Creare un nuovo utente: adduser myusername
+Usare il nuovo utente: su - myusername
+Creare codice: vi "nome_programma".c    //entra in modalità inserimento premendo "i", esci con "ESC", salva con ":wq"
+Compila il codice: gcc "nome_programma".c -o "nome_programma"
+Aprire codice: vi "nome_programma"
+Eseguire codice: ./"nome_programma"
+Modificare nome codice c: mv vecchio_nome.c nuovo_nome.c
+Modificare nome file oggetto: mv vecchio_nome.o nuovo_nome.o
